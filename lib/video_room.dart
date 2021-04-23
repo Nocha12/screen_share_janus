@@ -10,7 +10,7 @@ import 'package:screen_share_janus/streaming_model.dart';
 
 import 'publisher_info.dart';
 
-class VideoRoomPage {
+class VideoRoom {
   String room = "Flutter";
 
   String url = 'wss://bs010.onthe.live:8989/janus';

@@ -1,0 +1,295 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+MERGED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:2:1-29:12
+MERGED from [:janus_client_plugin] /Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:permission_handler] /Users/junseok/Desktop/checkGit/screen_share_janus/build/permission_handler/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [org.webrtc:google-webrtc:1.0.32006] /Users/junseok/.gradle/caches/transforms-2/files-2.1/728f8604e2a8ae3d8595870c429a27a2/jetified-google-webrtc-1.0.32006/AndroidManifest.xml:11:1-14:12
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/51ad6076794e2c6cb5109a2b1587123c/webkit-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.browser:browser:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/08d3290435f651b0eb15cc5e82b5f60c/browser-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/19e787717b9cae42321020fca60245cc/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/973aeb4036d7358aa71164254c885d27/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/b5340dab7dff28045dd3eef568dea42f/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/12d388ce60dad2f42e9238fa81d16aec/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/77e25648bf522dcd9d9ca0fdc0763657/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/59171fff57dc30bc785a3ce1172cc587/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/c3945459af888b4695671b6247bd29c0/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/275d42fb2918fb9bb73f653065351657/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/6036ed12758d0851fca98df40ee50086/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/60bad6f2ab83c1f4bf73bf3d05f1ae5d/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/2279575c42c059f216e60015f34c5d23/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/21458d7f0b67f9ffc1b17203235bd321/core-1.3.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/ae26c0da727f17901cc6b68ea7a71c9e/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/df8fe4915fc08a7dc94e29b14a0a97c2/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/deefd310d21d73de9af0c3f01bee00fc/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/0d8cec5ea4e14a5293f4b9c2629745eb/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/a90ca8bb1020a69e93bd60e54aa357be/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/9dff453916381dfd480c8a325551163c/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/a552590f7149bef866c0f2c525a80319/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/50dca05728b6e991966fddeb861b7728/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/6b6967a68d7878161c371a18e712f826/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+	package
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:2:5-45
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:1-80:12
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-feature#android.hardware.camera
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:10:5-60
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:10:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:11:5-70
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:11:19-67
+uses-permission#android.permission.INTERNET
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:12:22-64
+uses-permission#android.permission.CAMERA
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:13:5-65
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:13:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:14:5-71
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:7:5-71
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:14:22-68
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:15:22-76
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:16:5-79
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:16:22-76
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:17:5-80
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:17:22-77
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:18:5-80
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:8:5-80
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:18:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:19:5-80
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:9:5-81
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:19:22-78
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:20:5-77
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:20:22-74
+application
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:22:5-78:19
+MERGED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:13:5-27:19
+MERGED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:13:5-27:19
+MERGED from [androidx.core:core:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/21458d7f0b67f9ffc1b17203235bd321/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/21458d7f0b67f9ffc1b17203235bd321/core-1.3.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/ae26c0da727f17901cc6b68ea7a71c9e/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/ae26c0da727f17901cc6b68ea7a71c9e/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:requestLegacyExternalStorage
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:27:9-52
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/21458d7f0b67f9ffc1b17203235bd321/core-1.3.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:24:9-43
+	android:icon
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:25:9-43
+	android:usesCleartextTraffic
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:26:9-44
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:23:9-57
+service#com.example.screen_share_janus.ForegroundService
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:29:9-31:63
+	android:foregroundServiceType
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:31:13-60
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:30:13-46
+activity#com.example.screen_share_janus.MainActivity
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:33:9-72:20
+	android:launchMode
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:35:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:38:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:40:13-55
+	android:allowAudioPlaybackCapture
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:39:13-53
+	android:configChanges
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:37:13-163
+	android:theme
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:36:13-47
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:34:13-41
+meta-data#io.flutter.embedding.android.NormalTheme
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:45:13-48:19
+	android:resource
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:47:17-54
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:46:17-72
+meta-data#io.flutter.embedding.android.SplashScreenDrawable
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:54:13-57:19
+	android:resource
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:56:17-63
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:55:17-81
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:58:13-61:29
+action#android.intent.action.MAIN
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:59:17-68
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:59:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:60:17-76
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:60:27-74
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:onthe.live+data:scheme:live
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:64:13-71:29
+action#android.intent.action.VIEW
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:65:17-69
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:65:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:66:17-76
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:66:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:67:17-78
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:67:27-75
+data
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:68:17-70:49
+	android:host
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:70:21-46
+	android:scheme
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:69:21-42
+meta-data#flutterEmbedding
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:75:9-77:33
+	android:value
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:77:13-30
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml:76:13-44
+uses-sdk
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+MERGED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:janus_client_plugin] /Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:janus_client_plugin] /Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler] /Users/junseok/Desktop/checkGit/screen_share_janus/build/permission_handler/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler] /Users/junseok/Desktop/checkGit/screen_share_janus/build/permission_handler/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_webrtc] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_webrtc/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [org.webrtc:google-webrtc:1.0.32006] /Users/junseok/.gradle/caches/transforms-2/files-2.1/728f8604e2a8ae3d8595870c429a27a2/jetified-google-webrtc-1.0.32006/AndroidManifest.xml:13:3-72
+MERGED from [org.webrtc:google-webrtc:1.0.32006] /Users/junseok/.gradle/caches/transforms-2/files-2.1/728f8604e2a8ae3d8595870c429a27a2/jetified-google-webrtc-1.0.32006/AndroidManifest.xml:13:3-72
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/51ad6076794e2c6cb5109a2b1587123c/webkit-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.webkit:webkit:1.4.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/51ad6076794e2c6cb5109a2b1587123c/webkit-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/08d3290435f651b0eb15cc5e82b5f60c/browser-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/08d3290435f651b0eb15cc5e82b5f60c/browser-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/19e787717b9cae42321020fca60245cc/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/19e787717b9cae42321020fca60245cc/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/973aeb4036d7358aa71164254c885d27/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/973aeb4036d7358aa71164254c885d27/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/b5340dab7dff28045dd3eef568dea42f/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/b5340dab7dff28045dd3eef568dea42f/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/12d388ce60dad2f42e9238fa81d16aec/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/12d388ce60dad2f42e9238fa81d16aec/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/77e25648bf522dcd9d9ca0fdc0763657/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/77e25648bf522dcd9d9ca0fdc0763657/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/59171fff57dc30bc785a3ce1172cc587/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/59171fff57dc30bc785a3ce1172cc587/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/c3945459af888b4695671b6247bd29c0/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/c3945459af888b4695671b6247bd29c0/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/275d42fb2918fb9bb73f653065351657/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/275d42fb2918fb9bb73f653065351657/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/6036ed12758d0851fca98df40ee50086/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/6036ed12758d0851fca98df40ee50086/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/60bad6f2ab83c1f4bf73bf3d05f1ae5d/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/60bad6f2ab83c1f4bf73bf3d05f1ae5d/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/2279575c42c059f216e60015f34c5d23/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/2279575c42c059f216e60015f34c5d23/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/21458d7f0b67f9ffc1b17203235bd321/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/21458d7f0b67f9ffc1b17203235bd321/core-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/ae26c0da727f17901cc6b68ea7a71c9e/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/ae26c0da727f17901cc6b68ea7a71c9e/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/df8fe4915fc08a7dc94e29b14a0a97c2/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/df8fe4915fc08a7dc94e29b14a0a97c2/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/deefd310d21d73de9af0c3f01bee00fc/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/deefd310d21d73de9af0c3f01bee00fc/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/0d8cec5ea4e14a5293f4b9c2629745eb/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/0d8cec5ea4e14a5293f4b9c2629745eb/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/a90ca8bb1020a69e93bd60e54aa357be/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/a90ca8bb1020a69e93bd60e54aa357be/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/9dff453916381dfd480c8a325551163c/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/9dff453916381dfd480c8a325551163c/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/a552590f7149bef866c0f2c525a80319/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/a552590f7149bef866c0f2c525a80319/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/50dca05728b6e991966fddeb861b7728/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/50dca05728b6e991966fddeb861b7728/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/6b6967a68d7878161c371a18e712f826/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/junseok/.gradle/caches/transforms-2/files-2.1/6b6967a68d7878161c371a18e712f826/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/AndroidManifest.xml
+queries
+ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:7:5-11:15
+intent#action:name:android.support.customtabs.action.CustomTabsService
+ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:8:9-10:18
+action#android.support.customtabs.action.CustomTabsService
+ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:9:13-90
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:9:21-87
+activity#com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserActivity
+ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:14:9-17:47
+	android:configChanges
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:16:13-137
+	android:theme
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:17:13-44
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:15:13-104
+activity#com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivity
+ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:18:9-20:55
+	android:theme
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:20:13-52
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:19:13-112
+receiver#com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ActionBroadcastReceiver
+ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:22:9-120
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:22:19-117
+meta-data#io.flutter.embedded_views_preview
+ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:24:9-26:36
+	android:value
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:26:13-33
+	android:name
+		ADDED from [:flutter_inappwebview] /Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/library_manifest/release/AndroidManifest.xml:25:13-61

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/3f0e982339ff24e9e5cec28c56d30078/core-1.1.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/3f0e982339ff24e9e5cec28c56d30078/core-1.1.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/3f0e982339ff24e9e5cec28c56d30078/core-1.1.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/3f0e982339ff24e9e5cec28c56d30078/core-1.1.0/res/drawable/notification_tile_bg.xml"
+    }
+]

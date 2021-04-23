@@ -3,6 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-759866593/android.flutter_inappwebview.iml" filepath="$PROJECT_DIR$/.idea/modules/-759866593/android.flutter_inappwebview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1245379685/android.flutter_webrtc.iml" filepath="$PROJECT_DIR$/.idea/modules/-1245379685/android.flutter_webrtc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1256217049/android.janus_client_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/-1256217049/android.janus_client_plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/351177495/android.permission_handler.iml" filepath="$PROJECT_DIR$/.idea/modules/351177495/android.permission_handler.iml" />
     </modules>
   </component>
 </project>

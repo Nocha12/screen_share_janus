@@ -1,0 +1,2 @@
+org/janus/janus_client_plugin/BuildConfig.java
+ org.janus.janus_client_plugin.BuildConfig

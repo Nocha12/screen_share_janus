@@ -455,7 +455,6 @@ class ForegroundServicePlugin: FlutterPlugin, MethodCallHandler, IntentService("
   //just keep sending intents to keep this alive
   //TODO: find a better way to do this...
   private fun serviceLoop(){
-
     if(serviceIsStarted) {
       if ((dartServiceFunctionHandle != null) && isBackgroundIsolateSetupComplete){
         if (
@@ -561,6 +560,14 @@ class ForegroundServicePlugin: FlutterPlugin, MethodCallHandler, IntentService("
     var serviceIsForegrounded = false
     private fun maybeUpdateNotification(){
       if(!editModeEnabled) {
+        isWhiteIcon = if(isWhiteIcon) {
+          builder.setSmallIcon(getBlackIconResourceId())
+          false
+        } else {
+          builder.setSmallIcon(getWhiteIconResourceId())
+          true
+        }
+
         currentNotificationInternal = builder.build()
 
         if(serviceIsForegrounded) {
@@ -573,25 +580,34 @@ class ForegroundServicePlugin: FlutterPlugin, MethodCallHandler, IntentService("
     //you can only use built-in stuff, instead of being able to incorporate things at run-time
     //doesn't seem like there's much point in exposing it
     //so just hardcode the expected icon location
-    private val hardcodedIconName = "ic_stat_cast_connected"
+    private var isWhiteIcon = false;
+    private val whiteIconName = "ic_stat_cast_connected"
+    private val blackIconName = "black"
 
-    private fun getHardcodedIconResourceId(): Int =
+    private fun getBlackIconResourceId(): Int =
       myAppContext().resources.getIdentifier(
-              hardcodedIconName,
+              blackIconName,
               "drawable",
               myAppContext().packageName
       )
 
+    private fun getWhiteIconResourceId(): Int =
+            myAppContext().resources.getIdentifier(
+                    whiteIconName,
+                    "drawable",
+                    myAppContext().packageName
+            )
+
     private fun iconResourceIdIsValid(someResourceId: Int): Boolean = someResourceId != 0
-    fun hardcodedIconIsAvailable(): Boolean = iconResourceIdIsValid(getHardcodedIconResourceId())
-    val hardCodedIconNotFoundErrorMessage = "could not find /res/drawable/$hardcodedIconName;" +
+    fun hardcodedIconIsAvailable(): Boolean = iconResourceIdIsValid(getBlackIconResourceId())
+    val hardCodedIconNotFoundErrorMessage = "could not find /res/drawable/$blackIconName;" +
             " running a foreground service requires a notification," +
             " and a notification requires an icon"
 
     //whew, this is ugly
     //basically all the init/default stuff is shoved in here
     //TODO: can this be better?
-    private val builder: NotificationCompat.Builder by lazy{
+    private val builder: NotificationCompat.Builder by lazy {
 
       val newBuilder = NotificationCompat.Builder(myAppContext(), channelDefaultImportanceId)
 
@@ -606,7 +622,7 @@ class ForegroundServicePlugin: FlutterPlugin, MethodCallHandler, IntentService("
                 .setContentText("Running")
                 .setOngoing(true)
                 .setOnlyAlertOnce(false)
-                .setSmallIcon(getHardcodedIconResourceId())
+                .setSmallIcon(getBlackIconResourceId())
                 .setContentIntent(intent)
 
         //the "normal" setPriority method will try to rebuild/renotify

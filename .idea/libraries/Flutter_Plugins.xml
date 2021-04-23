@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/plugins/janus_client_plugin-0.0.1" />
+      <root url="file://$PROJECT_DIR$/plugins/flutter_webrtc-0.3.3" />
+      <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_inappwebview-5.3.2" />
+      <root url="file:///Applications/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler-6.1.1" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

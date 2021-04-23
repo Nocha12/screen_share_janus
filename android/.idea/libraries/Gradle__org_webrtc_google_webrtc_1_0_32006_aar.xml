@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.webrtc:google-webrtc:1.0.32006@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2d451aaf13b1bee460d82c15d07ae096/jetified-google-webrtc-1.0.32006/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2d451aaf13b1bee460d82c15d07ae096/jetified-google-webrtc-1.0.32006/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2d451aaf13b1bee460d82c15d07ae096/jetified-google-webrtc-1.0.32006/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/728f8604e2a8ae3d8595870c429a27a2/jetified-google-webrtc-1.0.32006/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/728f8604e2a8ae3d8595870c429a27a2/jetified-google-webrtc-1.0.32006/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/728f8604e2a8ae3d8595870c429a27a2/jetified-google-webrtc-1.0.32006/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -35,7 +35,9 @@ class MediaDevices {
       );
       String streamId = response['streamId'];
       var stream = MediaStream(streamId, 'local');
+
       stream.setMediaTracks(response['audioTracks'], response['videoTracks']);
+
       return stream;
     } on PlatformException catch (e) {
       throw 'Unable to getDisplayMedia: ${e.message}';

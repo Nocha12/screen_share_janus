@@ -5,11 +5,13 @@ import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
+import android.os.Build;
 import android.util.Log;
 import android.util.LongSparseArray;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.cloudwebrtc.webrtc.record.AudioChannel;
 import com.cloudwebrtc.webrtc.record.FrameCapturer;
@@ -129,6 +131,7 @@ public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
     mPeerConnectionObservers.clear();
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   private void ensureInitialized() {
     if (mFactory != null) {
       return;
@@ -160,6 +163,7 @@ public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
         .createPeerConnectionFactory();
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   @Override
   public void onMethodCall(MethodCall call, @NonNull Result notSafeResult) {
     ensureInitialized();
@@ -169,6 +173,9 @@ public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
       case "createPeerConnection": {
         Map<String, Object> constraints = call.argument("constraints");
         Map<String, Object> configuration = call.argument("configuration");
+
+        // TODO:       configuration
+
         String peerConnectionId = peerConnectionInit(new ConstraintsMap(configuration),
             new ConstraintsMap((constraints)));
 
@@ -948,6 +955,7 @@ public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
   }
 
 
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   public void getUserMedia(ConstraintsMap constraints, Result result) {
     String streamId = getNextStreamUUID();
     MediaStream mediaStream = mFactory.createLocalMediaStream(streamId);
@@ -966,6 +974,7 @@ public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
     getUserMediaImpl.getUserMedia(constraints, result, mediaStream);
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   public void getDisplayMedia(ConstraintsMap constraints, Result result) {
     String streamId = getNextStreamUUID();
 
@@ -1026,6 +1035,7 @@ public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
     result.success(resultMap);
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   public void mediaStreamTrackStop(final String id) {
     // Is this functionality equivalent to `mediaStreamTrackRelease()` ?
     // if so, we should merge this two and remove track from stream as well.
@@ -1114,6 +1124,7 @@ public class MethodCallHandlerImpl implements MethodCallHandler, StateProvider {
     result.success(null);
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   public void mediaStreamTrackRelease(final String streamId, final String _trackId) {
     MediaStream stream = localStreams.get(streamId);
     if (stream == null) {

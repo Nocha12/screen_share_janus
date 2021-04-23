@@ -114,6 +114,7 @@ class JanusConnection {
   Future<RTCSessionDescription> createOffer({Map<String, dynamic> constraints = constraints}) async {
     RTCSessionDescription sdp = await this._connection.createOffer(constraints);
     this._connection.setLocalDescription(sdp);
+
     return sdp;
   }
 
@@ -139,12 +140,14 @@ class JanusConnection {
   }
 
   Future createConnection() async{
-
     Map<String, dynamic> configuration = _iceServers;
     if(null != this.iceServers && this.iceServers.length > 0){
       configuration = {'iceServers': this.iceServers.map((e) => e.toMap()).toList(),};
     }
     this._connection = await createPeerConnection(configuration,_config);
+
+    print(_connection);
+
     // ice加入后处理
     this._connection.onIceCandidate = (candidate) => this.onIceCandidate(this, candidate);
     // stream add后处理
@@ -155,7 +158,5 @@ class JanusConnection {
     this._connection.onDataChannel = (channel) {};
 
     return this._connection;
-
   }
-
 }

@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/example/screen_share_janus/BuildConfig.java
+ com.example.screen_share_janus.BuildConfig

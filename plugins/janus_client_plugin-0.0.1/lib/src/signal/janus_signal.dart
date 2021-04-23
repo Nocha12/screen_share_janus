@@ -52,7 +52,7 @@ class JanusSignal {
 
   int _handleId = -1;
 
-  int _roomId;
+  String _roomId;
 
   // websocket服务器地址
   String _url;   
@@ -109,7 +109,7 @@ class JanusSignal {
 
   set sessionId(int sessionId) => this._sessionId = sessionId;
 
-  set roomId(int roomId) => this._roomId = roomId;
+  set roomId(String roomId) => this._roomId = roomId;
 
   set url(String url) => this._url = url;
 
@@ -183,8 +183,6 @@ class JanusSignal {
     });
   }
 
-
-
   /// websocket断开链接
   void disconnect() {
     debugPrint('janus disconnect===========>$disConnected');
@@ -200,7 +198,6 @@ class JanusSignal {
     Map jsep,
     String transaction 
   }){
-
     transaction ??= randomAlphaNumeric(12);
     Map<String, dynamic> msgMap = {
       "janus": "message",
@@ -209,11 +206,12 @@ class JanusSignal {
       "session_id": this._sessionId,
       "handle_id": handleId
     };
+
     if(jsep != null){
       msgMap["jsep"] = jsep;
     }
-    this.send(msgMap);
 
+    this.send(msgMap);
   }
 
   /// 公共消息发送
@@ -225,7 +223,6 @@ class JanusSignal {
     debugPrint('janus client send=====>>>>>>$map');
     String json = this._encoder.convert(map);
     this._sink.add(json);
-
   }
 
   /// 创建会话
@@ -328,7 +325,6 @@ class JanusSignal {
 
   /// 心跳
   void keepAlive(){
-
     Map<String, dynamic> aliveMap = {
       'janus': 'keepalive',
       'session_id': this._sessionId,
@@ -385,7 +381,7 @@ class JanusSignal {
           return;
         }
 
-        if(null != this._handleMap[plugin['id']] && null != plugin['id'] && null != plugin['display'] && null != this._changeDisplay){
+        if(null != this._handleMap[plugin['id']] && null != plugin['id'] && null != plugin['display'] && null != this._changeDisplay) {
           this._handleMap[plugin['id']].display = plugin['display'];
           this._changeDisplay(plugin['id'], plugin['display']);
         }
@@ -402,7 +398,6 @@ class JanusSignal {
           }
           this._transMap.remove(transaction);
         }
-        
 
         JanusHandle handle = this._handleMap[message['sender']];
         
@@ -446,6 +441,9 @@ class JanusSignal {
       default: {
         debugPrint('$_kJanus handleMessage defalut: $message');
         JanusHandle handle = this._handleMap[message['sender']];
+
+        print("------Media Message-------");
+
         if(handle == null){
           print('missing handle');
         }

@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-hdpi_ic_stat_close.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-hdpi/ic_stat_close.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-xxhdpi_ic_stat_cast_connected.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-xxhdpi/ic_stat_cast_connected.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-hdpi_ic_stat_cast_connected.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-hdpi/ic_stat_cast_connected.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable_launch_background.xml.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable/launch_background.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-mdpi_ic_stat_close.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-mdpi/ic_stat_close.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-xhdpi_ic_stat_close.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-xhdpi/ic_stat_close.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-xhdpi_black.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-xhdpi/black.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-xxhdpi_ic_stat_close.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-xxhdpi/ic_stat_close.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-hdpi_black.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-hdpi/black.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-xxxhdpi_ic_stat_close.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-xxxhdpi/ic_stat_close.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-xxhdpi_black.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-xxhdpi/black.png"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/app/intermediates/res/merged/debug/drawable-xhdpi_ic_stat_cast_connected.png.flat",
+        "source": "/Users/junseok/Desktop/checkGit/screen_share_janus/android/app/src/main/res/drawable-xhdpi/ic_stat_cast_connected.png"
+    }
+]

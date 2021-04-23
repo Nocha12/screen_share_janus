@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/res/merged/release/values-sw/values-sw.xml",
+            "map": [
+                {
+                    "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/3f0e982339ff24e9e5cec28c56d30078/core-1.1.0/res/values-sw/values-sw.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/janus_client_plugin/intermediates/incremental/mergeReleaseResources/merged.dir/values-sw/values-sw.xml",
+            "map": [
+                {
+                    "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/3f0e982339ff24e9e5cec28c56d30078/core-1.1.0/res/values-sw/values-sw.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

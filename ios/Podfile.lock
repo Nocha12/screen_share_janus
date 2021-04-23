@@ -1,0 +1,69 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_inappwebview (0.0.1):
+    - Flutter
+    - flutter_inappwebview/Core (= 0.0.1)
+    - OrderedSet (~> 5.0)
+  - flutter_inappwebview/Core (0.0.1):
+    - Flutter
+    - OrderedSet (~> 5.0)
+  - flutter_webrtc (0.2.2):
+    - Flutter
+    - GoogleWebRTC (= 1.1.29400)
+    - Libyuv (= 1703)
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - GoogleWebRTC (1.1.29400)
+  - janus_client_plugin (0.0.1):
+    - Flutter
+  - Libyuv (1703)
+  - OrderedSet (5.0.0)
+  - "permission_handler (5.1.0+2)":
+    - Flutter
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_inappwebview (from `.symlinks/plugins/flutter_inappwebview/ios`)
+  - flutter_webrtc (from `.symlinks/plugins/flutter_webrtc/ios`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - janus_client_plugin (from `.symlinks/plugins/janus_client_plugin/ios`)
+  - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
+
+SPEC REPOS:
+  trunk:
+    - GoogleWebRTC
+    - Libyuv
+    - OrderedSet
+    - Toast
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_inappwebview:
+    :path: ".symlinks/plugins/flutter_inappwebview/ios"
+  flutter_webrtc:
+    :path: ".symlinks/plugins/flutter_webrtc/ios"
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  janus_client_plugin:
+    :path: ".symlinks/plugins/janus_client_plugin/ios"
+  permission_handler:
+    :path: ".symlinks/plugins/permission_handler/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
+  flutter_webrtc: 626ca239bcc4390a514a2ac2b21b16d0c58b33fe
+  fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
+  GoogleWebRTC: cfb83bc346435a17fe06bb05f04ad826b858a7fb
+  janus_client_plugin: 74179bced804968a44196f67bf53f09dee0ddd00
+  Libyuv: 5f79ced0ee66e60a612ca97de1e6ccacd187a437
+  OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
+  permission_handler: ccb20a9fad0ee9b1314a52b70b76b473c5f8dab0
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1

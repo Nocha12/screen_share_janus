@@ -16,12 +16,19 @@ import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CaptureRequest;
+import android.media.AudioAttributes;
+import android.media.AudioFormat;
+import android.media.AudioPlaybackCaptureConfiguration;
+import android.media.AudioPlaybackConfiguration;
+import android.media.AudioRecord;
+import android.media.MediaRecorder;
 import android.media.projection.MediaProjection;
 import android.media.projection.MediaProjectionManager;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.ResultReceiver;
@@ -37,6 +44,7 @@ import androidx.annotation.RequiresApi;
 
 import com.cloudwebrtc.webrtc.record.AudioChannel;
 import com.cloudwebrtc.webrtc.record.AudioSamplesInterceptor;
+import com.cloudwebrtc.webrtc.record.AudioTrackInterceptor;
 import com.cloudwebrtc.webrtc.record.MediaRecorderImpl;
 import com.cloudwebrtc.webrtc.record.OutputAudioSamplesInterceptor;
 import com.cloudwebrtc.webrtc.utils.Callback;
@@ -68,10 +76,16 @@ import org.webrtc.VideoTrack;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import io.flutter.plugin.common.MethodChannel.Result;
@@ -80,6 +94,8 @@ import io.flutter.plugin.common.MethodChannel.Result;
  * The implementation of {@code getUserMedia} extracted into a separate file in order to reduce
  * complexity and to (somewhat) separate concerns.
  */
+
+@RequiresApi(api = VERSION_CODES.LOLLIPOP)
 class GetUserMediaImpl {
 
     private static final int DEFAULT_WIDTH = 1280;
@@ -104,8 +120,9 @@ class GetUserMediaImpl {
     private final Context applicationContext;
 
     static final int minAPILevel = Build.VERSION_CODES.LOLLIPOP;
-    private MediaProjectionManager mProjectionManager = null;
     private static MediaProjection sMediaProjection = null;
+    private AudioRecord audioRecord;
+
 
     final AudioSamplesInterceptor inputSamplesInterceptor = new AudioSamplesInterceptor();
     private OutputAudioSamplesInterceptor outputSamplesInterceptor = null;
@@ -124,6 +141,7 @@ class GetUserMediaImpl {
         args.putInt(REQUEST_CODE, CAPTURE_PERMISSION_REQUEST_CODE);
 
         ScreenRequestPermissionsFragment fragment = new ScreenRequestPermissionsFragment();
+
         fragment.setArguments(args);
 
         FragmentTransaction transaction =
@@ -144,6 +162,8 @@ class GetUserMediaImpl {
         private ResultReceiver resultReceiver = null;
         private int requestCode = 0;
         private int resultCode = 0;
+        public static MediaProjectionManager mProjectionManager;
+
 
         private void checkSelfPermissions(boolean requestPermissions) {
             if (resultCode != Activity.RESULT_OK) {
@@ -162,12 +182,10 @@ class GetUserMediaImpl {
                         "Can't run requestStart() due to a low API level. API level 21 or higher is required.");
                 return;
             } else {
-                MediaProjectionManager mediaProjectionManager =
-                        (MediaProjectionManager) activity.getSystemService(Context.MEDIA_PROJECTION_SERVICE);
+                mProjectionManager = (MediaProjectionManager) activity.getSystemService(Context.MEDIA_PROJECTION_SERVICE);
 
                 // call for the projection manager
-                this.startActivityForResult(
-                        mediaProjectionManager.createScreenCaptureIntent(), requestCode);
+                this.startActivityForResult(mProjectionManager.createScreenCaptureIntent(), requestCode);
             }
         }
 
@@ -333,7 +351,7 @@ class GetUserMediaImpl {
     }
 
     /**
-     * Implements {@code getUserMedia} without knowledge whether the necessary permissions have
+     * Implements {@code getUserMedia} without knowledge whether the necessary permissions haved
      * already been granted. If the necessary permissions have not been granted yet, they will be
      * requested.
      */
@@ -428,27 +446,41 @@ class GetUserMediaImpl {
                 });
     }
 
+//    class RecordThread extends Thread implements Runnable
+//    {
+//        public void run()
+//        {
+//            Log.d(TAG, "-=-=create file");
+//            File outputFile = createAudioFile();
+//
+//            new Handler(Looper.getMainLooper()).postDelayed(
+//                (Runnable) () -> {
+//                    if(audioRecord != null) {
+//                        Log.d(TAG, "-=-=interrupt");
+//
+//                        audioCaptureThread.interrupt();
+//
+//                    }
+//                }, 5000);
+//
+//            try {
+//                writeAudioToFile(outputFile);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+
+//    Thread audioCaptureThread = new RecordThread();
+
     void getDisplayMedia(
             final ConstraintsMap constraints, final Result result, final MediaStream mediaStream) {
-        ConstraintsMap videoConstraintsMap = null;
-        ConstraintsMap videoConstraintsMandatory = null;
-
-        if (constraints.getType("video") == ObjectType.Map) {
-            videoConstraintsMap = constraints.getMap("video");
-            if (videoConstraintsMap.hasKey("mandatory")
-                    && videoConstraintsMap.getType("mandatory") == ObjectType.Map) {
-                videoConstraintsMandatory = videoConstraintsMap.getMap("mandatory");
-            }
-        }
-
-        final ConstraintsMap videoConstraintsMandatory2 = videoConstraintsMandatory;
 
         screenRequestPremissions(
                 new ResultReceiver(new Handler(Looper.getMainLooper())) {
+                    @RequiresApi(api = VERSION_CODES.Q)
                     @Override
                     protected void onReceiveResult(int requestCode, Bundle resultData) {
-
-                        /* Create ScreenCapture */
                         int resultCode = resultData.getInt(GRANT_RESULTS);
                         Intent mediaProjectionData = resultData.getParcelable(PROJECTION_DATA);
 
@@ -457,35 +489,100 @@ class GetUserMediaImpl {
                             return;
                         }
 
-                        MediaStreamTrack[] tracks = new MediaStreamTrack[1];
-                        VideoCapturer videoCapturer = null;
-                        videoCapturer =
-                                new ScreenCapturerAndroid(
-                                        mediaProjectionData,
-                                        new MediaProjection.Callback() {
-                                            @Override
-                                            public void onStop() {
-                                                Log.e(TAG, "User revoked permission to capture the screen.");
-                                                result.error(null, "User revoked permission to capture the screen.", null);
-                                            }
-                                        });
-                        if (videoCapturer == null) {
-                            result.error(
-                                    /* type */ "GetDisplayMediaFailed", "Failed to create new VideoCapturer!", null);
-                            return;
-                        }
+                        int NUM_SAMPLES_PER_READ = 1024;
+                        int BYTES_PER_SAMPLE = 2; // 2 bytes since we hardcoded the PCM 16-bit format
+                        int BUFFER_SIZE_IN_BYTES = NUM_SAMPLES_PER_READ * BYTES_PER_SAMPLE;
+                        String EXTRA_RESULT_DATA = "AudioCaptureService:Extra:ResultData";
 
+                        sMediaProjection = ScreenRequestPermissionsFragment.mProjectionManager.getMediaProjection(Activity.RESULT_OK, mediaProjectionData);
+
+                        AudioPlaybackCaptureConfiguration config = new AudioPlaybackCaptureConfiguration.Builder(sMediaProjection)
+                                .addMatchingUsage(AudioAttributes.USAGE_UNKNOWN)
+                                .build();
+
+                        AudioFormat audioFormat = new AudioFormat.Builder()
+                                .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+                                .setSampleRate(44100)
+                                .setChannelMask(AudioFormat.CHANNEL_IN_MONO)
+                                .build();
+
+                        audioRecord = new AudioRecord.Builder()
+                                .setAudioFormat(audioFormat)
+                                .setBufferSizeInBytes(BUFFER_SIZE_IN_BYTES)
+                                .setAudioPlaybackCaptureConfig(config)
+                                .build();
+
+                        audioRecord.startRecording();
+
+                        
+//                        byte[] capturedAudioSamples = new byte[1024];
+
+//                        audioRecord.read(capturedAudioSamples, 0, 1024);
+
+//                        android.media.AudioTrack audioTrack = new android.media.AudioTrack();
+//
+//                        AudioTrackInterceptor interceptor = new AudioTrackInterceptor(audioTrack, outputSamplesInterceptor);
+//
+//                        interceptor.write(capturedAudioSamples, 0, 1024);
+//                        try {
+//                            outputSamplesInterceptor.attachCallback(0, null);
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
+
+//                        Field audioOutputField = null;
+//                        try {
+//                            audioOutputField = audioDeviceModule.getClass().getDeclaredField("audioOutput");
+//                        } catch (NoSuchFieldException e) {
+//                            e.printStackTrace();
+//                        }
+//                        audioOutputField.setAccessible(true);
+//                        WebRtcAudioTrack audioOutput = null;
+//                        try {
+//                            audioOutput = (WebRtcAudioTrack) audioOutputField.get(audioDeviceModule);
+//                        } catch (IllegalAccessException e) {
+//                            e.printStackTrace();
+//                        }
+//                        Field audioTrackField = audioOutput.getClass().getDeclaredField("audioTrack");
+//                        audioTrackField.setAccessible(true);
+//                        android.media.AudioTrack audioTrack = null;
+//                        try {
+//                            audioTrack = (android.media.AudioTrack) audioTrackField.get(audioOutput);
+//                        } catch (IllegalAccessException e) {
+//                            e.printStackTrace();
+//                        }
+//                        AudioTrackInterceptor ins = new AudioTrackInterceptor(audioTrack, outputSamplesInterceptor);
+//                        try {
+//                            audioTrackField.set(audioOutput, ins);
+//                        } catch (IllegalAccessException e) {
+//                            e.printStackTrace();
+//                        }
+
+//                        audioCaptureThread.start();
+
+                        MediaStreamTrack[] tracks = new MediaStreamTrack[2];
+
+                        VideoCapturer videoCapturer = new ScreenCapturerAndroid(
+                            mediaProjectionData,
+                            new MediaProjection.Callback() {
+                                @Override
+                                public void onStop() {
+                                    Log.e(TAG, "User revoked permission to capture the screen.");
+                                    result.error(null, "User revoked permission to capture the screen.", null);
+                                }
+                            });
+                        
                         PeerConnectionFactory pcFactory = stateProvider.getPeerConnectionFactory();
                         VideoSource videoSource = pcFactory.createVideoSource(true);
 
                         String threadName = Thread.currentThread().getName();
                         SurfaceTextureHelper surfaceTextureHelper =
                                 SurfaceTextureHelper.create(threadName, EglUtils.getRootEglBaseContext());
+
                         videoCapturer.initialize(
                                 surfaceTextureHelper, applicationContext, videoSource.getCapturerObserver());
 
-                        WindowManager wm =
-                                (WindowManager) applicationContext.getSystemService(Context.WINDOW_SERVICE);
+                        WindowManager wm = (WindowManager) applicationContext.getSystemService(Context.WINDOW_SERVICE);
 
                         int width = wm.getDefaultDisplay().getWidth();
                         int height = wm.getDefaultDisplay().getHeight();
@@ -495,9 +592,21 @@ class GetUserMediaImpl {
                         Log.d(TAG, "ScreenCapturerAndroid.startCapture: " + width + "x" + height + "@" + fps);
 
                         String trackId = stateProvider.getNextTrackUUID();
+                        String audioTrackId = stateProvider.getNextTrackUUID();
                         mVideoCapturers.put(trackId, videoCapturer);
 
                         tracks[0] = pcFactory.createVideoTrack(trackId, videoSource);
+                        tracks[1] = new AudioTrack(10540);
+//                        tracks[1] = 
+//AudioTrack
+//                        AudioSource audioSource = pcFactory.createAudioSource(new MediaConstraints());
+//                        pcFactory
+
+//                        android.media.AudioTrack at = new android.media.AudioTrack();
+                        //tracks[1].
+//                        AudioSamplesInterceptor interceptor = new OutputAudioSamplesInterceptor(audioDeviceModule);
+
+//                        AudioTrackInterceptor audioTrackInterceptor = new AudioTrackInterceptor(, interceptor);
 
                         ConstraintsArray audioTracks = new ConstraintsArray();
                         ConstraintsArray videoTracks = new ConstraintsArray();
@@ -875,7 +984,7 @@ class GetUserMediaImpl {
             List<String> supportedModes = params.getSupportedFlashModes();
 
             result.success(
-                    (supportedModes == null) ? false : supportedModes.contains(Parameters.FLASH_MODE_TORCH));
+                    (supportedModes != null) && supportedModes.contains(Parameters.FLASH_MODE_TORCH));
             return;
         }
 
@@ -979,16 +1088,18 @@ class GetUserMediaImpl {
 
     private Object getPrivateProperty(Class klass, Object object, String fieldName)
             throws NoSuchFieldWithNameException {
+        Object result;
         try {
-            Field field = klass.getDeclaredField(fieldName);
-            field.setAccessible(true);
-            return field.get(object);
+                    Field field = klass.getDeclaredField(fieldName);
+                    field.setAccessible(true);
+            result = field.get(object);
         } catch (NoSuchFieldException e) {
-            throw new NoSuchFieldWithNameException(klass.getName(), fieldName, e);
-        } catch (IllegalAccessException e) {
-            // Should never happen since we are calling `setAccessible(true)`
-            throw new RuntimeException(e);
-        }
+                    throw new NoSuchFieldWithNameException(klass.getName(), fieldName, e);
+                } catch (IllegalAccessException e) {
+                    // Should never happen since we are calling `setAccessible(true)`
+                    throw new RuntimeException(e);
+                }
+        return result;
     }
 
     private class NoSuchFieldWithNameException extends NoSuchFieldException {

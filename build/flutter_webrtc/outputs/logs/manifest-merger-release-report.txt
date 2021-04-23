@@ -1,0 +1,31 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:2:3-35
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:4:5-71
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:4:22-68
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:5:5-80
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:5:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml:6:22-78
+uses-sdk
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml
+INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml
+		ADDED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/junseok/Desktop/checkGit/screen_share_janus/plugins/flutter_webrtc-0.3.3/android/src/main/AndroidManifest.xml

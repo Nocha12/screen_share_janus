@@ -1,27 +1,23 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:foreground_service/foreground_service.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:janus_client_plugin/janus_client_plugin.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:random_string/random_string.dart';
+import 'package:screen_share_janus/main.dart';
 import 'package:screen_share_janus/streaming_model.dart';
 
 import 'publisher_info.dart';
 
 class VideoRoom {
-  String room = "Flutter";
-
   String url = 'wss://bs010.onthe.live:8989/janus';
   bool withCredentials = false;
   String apiSecret = "SecureIt";
-  String displayName = 'dumei';
   String pluginName = 'janus.plugin.videoroom';
   List<RTCIceServer> iceServers;
   JanusSignal _signal;
 
   MediaStream _localStream;
+  InAppWebViewController webViewController;
 
   String opaqueId = 'videoroomtest-${randomString(12)}';
   Map<int, JanusConnection> peerConnectionMap = <int, JanusConnection>{};
@@ -40,7 +36,9 @@ class VideoRoom {
     }
   }
 
-  Future<bool> init() async {
+  Future<bool> init(InAppWebViewController controller) async {
+    webViewController = controller;
+
     this._signal = JanusSignal.getInstance(url: url, apiSecret: apiSecret, withCredentials: withCredentials);
 
     this.onMessage();
@@ -68,7 +66,7 @@ class VideoRoom {
   void stopForeground() async {
     disconnect();
 
-    await ForegroundService.stopForegroundService();
+    await platform.invokeMethod('stopForeground');
 
     var model = PublisherInfo.instance.streamingModel;
 
@@ -76,21 +74,18 @@ class VideoRoom {
   }
 
   void onMessage() {
+
     this._signal.onMessage = (JanusHandle handle, Map plugin, Map jsep, JanusHandle feedHandle) {
       String videoroom = plugin['videoroom'];
 
       if(videoroom == 'event') {
-        if(plugin['error'] != null) {
-          Fluttertoast.showToast(
-              msg: plugin['error'],
-              toastLength: Toast.LENGTH_LONG,
-              gravity: ToastGravity.CENTER,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 25.0
-          );
+        if(plugin['configured'] != null && plugin['configured'] == "ok") {
+          if(plugin['configured'] == "ok") {
+            webViewController.evaluateJavascript(source: "window.parent.onPublished();");
+          }
+        }
 
+        if(plugin['error'] != null) {
           var model = PublisherInfo.instance.streamingModel;
 
           model.state = StreamingState.stopped;
@@ -143,18 +138,20 @@ class VideoRoom {
   }
 
   void checkRoom(Map<String, dynamic> attachData){
+    var info = PublisherInfo.instance;
+
     this._signal.videoRoomHandle(
-        req: RoomReq(request: 'exists', room: this.room).toMap(),
+        req: RoomReq(request: 'exists', room: info.room).toMap(),
         success: (data){
           debugPrint('exists room=====>>>>>>$data');
-          if(null != data['plugindata']['data'] &&  data['plugindata']['data']['exists']){
+          if(data['plugindata']['data'] != null &&  data['plugindata']['data']['exists']){
             this.joinRoom(attachData);
           }else {
             this._signal.videoRoomHandle(
-                req: RoomReq(request: 'create', room: this.room, description: 'this is my room').toMap(),
+                req: RoomReq(request: 'create', room: info.room, description: 'this is my room').toMap(),
                 success: (data){
                   debugPrint('create room=====>>>>>>$data');
-                  this.joinRoom(attachData);
+                  joinRoom(attachData);
                 },
                 error: (data){
                   print('create room error========>$data');
@@ -176,7 +173,6 @@ class VideoRoom {
       "request": "join",
       "room": info.room,
       "ptype": "publisher",
-      "display": this.displayName,
       "id": info.id,
       'secret': '',
       'pin': ''
@@ -185,7 +181,6 @@ class VideoRoom {
     this._signal.joinRoom(
         data: data,
         body: body,
-        display: this.displayName,
         onJoined: (handle){
           //　createOffer
           this.onPublisherJoined(handle);
@@ -227,7 +222,6 @@ class VideoRoom {
   }
 
   Future<JanusConnection> createJanusConnection({@required JanusHandle handle}) async {
-
     JanusConnection jc = JanusConnection(handleId: handle.handleId, iceServers: iceServers, display: handle.display);
     debugPrint('${this.peerConnectionMap.length} ====${handle.handleId}');
     this.peerConnectionMap[handle.feedId] = jc;

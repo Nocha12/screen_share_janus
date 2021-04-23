@@ -22,7 +22,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 18
@@ -41,6 +41,6 @@ android {
 }
 
 dependencies {
-    api 'org.webrtc:google-webrtc:1.0.30039'
+    implementation 'org.webrtc:google-webrtc:1.0.+'
     implementation "androidx.annotation:annotation:1.1.0"
 }

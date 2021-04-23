@@ -1,26 +1,32 @@
-import 'dart:async';
-import 'dart:io';
+import 'dart:io' as di;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foreground_service/foreground_service.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:screen_share_janus/streaming_model.dart';
-import 'package:screen_share_janus/video_room_page.dart';
-import 'video_room_page.dart';
+import 'package:screen_share_janus/video_room.dart';
 import 'publisher_info.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class MyHttpOverrides extends HttpOverrides {
+class MyHttpOverrides extends di.HttpOverrides {
   @override
-  HttpClient createHttpClient(SecurityContext context) {
+  di.HttpClient createHttpClient(di.SecurityContext context) {
     return super.createHttpClient(context)
-      ..badCertificateCallback =
-          (X509Certificate cert, String host, int port) => true;
+      ..badCertificateCallback = (di.X509Certificate cert, String host, int port) => true;
   }
 }
 
-void main() {
-  HttpOverrides.global = new MyHttpOverrides();
+const platform = const MethodChannel("onthelive.webview/foreground");
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  di.HttpOverrides.global = new MyHttpOverrides();
+
+  await Permission.camera.request();
+  await Permission.microphone.request();
+  await Permission.storage.request();
 
   runApp(
     ChangeNotifierProvider(
@@ -28,22 +34,6 @@ void main() {
         child: MyApp()
     ),
   );
-}
-
-Future<void> startForegroundService() async {
-  if (!(await ForegroundService.foregroundServiceIsStarted())) {
-    await ForegroundService.notification.startEditMode();
-
-    await ForegroundService.setContinueRunningAfterAppKilled(false);
-
-    await ForegroundService.notification.setTitle("On the Live");
-    await ForegroundService.notification.setText("화면공유중");
-
-    await ForegroundService.notification.finishEditMode();
-
-    await ForegroundService.startForegroundService(null);
-    await ForegroundService.getWakeLock();
-  }
 }
 
 class MyApp extends StatelessWidget {
@@ -68,36 +58,91 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
-  VideoRoomPage videoRoom = VideoRoomPage();
+class _MyHomePageState extends State<MyHomePage> {
+  VideoRoom videoRoom = VideoRoom();
 
+  TextEditingController roomController = TextEditingController();
+  TextEditingController idController = TextEditingController();
 
-  void _entryVideoRoom() async {
-    await startForegroundService();
+  final GlobalKey webViewKey = GlobalKey();
+
+  InAppWebViewController webViewController;
+  InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
+      crossPlatform: InAppWebViewOptions(
+        useOnDownloadStart: true,
+      ),
+      android: AndroidInAppWebViewOptions(
+        useHybridComposition: true,
+      ),
+      ios: IOSInAppWebViewOptions(
+      )
+  );
+
+  void addJavaScriptHandler(InAppWebViewController controller) {
+    controller.addJavaScriptHandler(handlerName: "publish", callback: (param) async {
+      PublisherInfo.instance.room = param[0].toString().trim();
+      PublisherInfo.instance.id = param[1].toString().trim();
+
+      await _entryVideoRoom();
+
+      return "fin";
+    });
+
+    controller.addJavaScriptHandler(handlerName: "unpublish", callback: (param) async {
+      await _exitVideoRoom();
+
+      return "fin";
+    });
+  }
+
+  Future<void> _entryVideoRoom() async {
+    if(PublisherInfo.instance.room.isEmpty || PublisherInfo.instance.id.isEmpty) {
+
+      return;
+    }
+
+    if(di.Platform.isAndroid)
+      await platform.invokeMethod('startForeground');
 
     var model = PublisherInfo.instance.streamingModel;
 
     model.state = StreamingState.connecting;
 
-    var isInit = await videoRoom.init();
+    var isInit = await videoRoom.init(webViewController);
 
     if(!isInit) {
-      await ForegroundService.stopForegroundService();
+      if(di.Platform.isAndroid)
+        await platform.invokeMethod('stopForeground');
+
+      webViewController.evaluateJavascript(source: "window.parent.onUnpublished();");
 
       model.state = StreamingState.ready;
     }
+
+    return;
   }
 
-  void _exitVideoRoom() async {
+  Future<void> _exitVideoRoom() async {
     var model = PublisherInfo.instance.streamingModel;
 
     model.state = StreamingState.stopped;
 
     videoRoom.disconnect();
 
-    await ForegroundService.stopForegroundService();
+    if(di.Platform.isAndroid)
+      await platform.invokeMethod('stopForeground');
+
+    webViewController.evaluateJavascript(source: "window.parent.onUnpublished();");
 
     model.state = StreamingState.ready;
+
+    return;
+  }
+
+  void requestPermission() async {
+    await Permission.camera.request();
+    await Permission.microphone.request();
+    await Permission.storage.request();
   }
 
   @override
@@ -105,58 +150,34 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     super.initState();
 
     PublisherInfo.instance.streamingModel = context.read<StreamingModel>();
-
-    WidgetsBinding.instance.addObserver(this);
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
-
-    if(state == AppLifecycleState.detached) {
-      // videoRoom.leave();
-      // videoRoom.temp();
-    }
+    requestPermission();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("room : " + PublisherInfo.instance.room + ", id : " + PublisherInfo.instance.id),
-      ),
-      body: Center(
-        child: Consumer<StreamingModel>(
-          builder: (context, model, child) {
-            Icon icon;
-            VoidCallback onPressed;
+      body: SafeArea(
+        child: InAppWebView(
+          key: webViewKey,
+          initialOptions: options,
+          initialUrlRequest:
+          URLRequest(url: Uri.parse("https://bs010.onthe.live:10180/flutter")),
 
-            if(model.state == StreamingState.ready) {
-              icon = Icon(Icons.not_started_outlined);
+          onWebViewCreated: (controller) {
+            webViewController = controller;
 
-              onPressed = () => _entryVideoRoom();
-            }
+            addJavaScriptHandler(controller);
+          },
 
-            if(model.state == StreamingState.connecting)
-              icon = Icon(Icons.contactless_outlined);
+          androidOnPermissionRequest: (controller, origin, resources) async {
+            return PermissionRequestResponse(
+              resources: resources,
+              action: PermissionRequestResponseAction.GRANT
+            );
+          },
 
-            if(model.state == StreamingState.running) {
-              icon = Icon(Icons.not_started_sharp);
-
-              onPressed = () => _exitVideoRoom();
-            }
-
-            if(model.state == StreamingState.stopped)
-              icon = Icon(Icons.cancel_presentation_rounded);
-
-            return IconButton(icon: icon, onPressed: onPressed, iconSize: 100,);
+          onConsoleMessage: (controller, consoleMessage) {
+            print(consoleMessage);
           },
         ),
       ),

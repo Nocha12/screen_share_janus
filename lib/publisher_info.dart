@@ -5,8 +5,8 @@ class PublisherInfo {
 
   static final PublisherInfo instance = PublisherInfo._privateConstructor();
 
-  String room = "FlutterDefault";
-  String id = "tester";
+  String room = "";
+  String id = "";
 
   StreamingModel streamingModel;
 }

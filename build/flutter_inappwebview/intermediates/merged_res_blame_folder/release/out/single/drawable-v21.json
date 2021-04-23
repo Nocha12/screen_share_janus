@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/res/merged/release/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/19e787717b9cae42321020fca60245cc/appcompat-1.2.0/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/res/merged/release/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/19e787717b9cae42321020fca60245cc/appcompat-1.2.0/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/res/merged/release/drawable-v21/notification_action_background.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/21458d7f0b67f9ffc1b17203235bd321/core-1.3.0/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/res/merged/release/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/19e787717b9cae42321020fca60245cc/appcompat-1.2.0/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/res/merged/release/drawable-v21/abc_dialog_material_background.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/19e787717b9cae42321020fca60245cc/appcompat-1.2.0/res/drawable-v21/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/junseok/Desktop/checkGit/screen_share_janus/build/flutter_inappwebview/intermediates/res/merged/release/drawable-v21/abc_list_divider_material.xml",
+        "source": "/Users/junseok/.gradle/caches/transforms-2/files-2.1/19e787717b9cae42321020fca60245cc/appcompat-1.2.0/res/drawable-v21/abc_list_divider_material.xml"
+    }
+]
